@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angrymo</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('pakistanflag.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ffffff;
+            text-shadow: 1px 1px 0px #000, -1px -1px 0px #000;
+        }
+
+        .angry-button-container {
+            margin-top: 50px;
+        }
+
+        #angryButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #angryButton:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        #angryMessage {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 0px #000, -1px -1px 0px #000;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #ffffff;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 0px #000, -1px -1px 0px #000;
+        }
+
+        /* Small link in the bottom-left corner */
+        .small-link {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.7em;
+            color: #000;
+        }
+
+        /* Spinning Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        img.spin {
+            width: 300px;
+            margin-top: 20px;
+            animation: spin 5s linear infinite; /* Spins in 5 seconds in a loop */
+        }
+
+        /* Styling for the house section */
+        .house-container {
+            position: absolute;
+            right: 10px;
+            top: 200px;
+            text-align: center;
+        }
+
+        .house-container img {
+            width: 200px;
+            margin-top: 10px;
+            border: 2px solid #000;
+        }
+
+        .house-container h2 {
+            color: white;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* Styling for the channel section */
+        .channel-container {
+            position: absolute;
+            left: 10px;
+            top: 200px;
+            text-align: center;
+        }
+
+        .channel-container img {
+            width: 200px;
+            margin-top: 10px;
+            border: 2px solid #000;
+        }
+
+        .channel-container h2 {
+            color: white;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Angrymo!</h1>
+        <p>A place to let out all your frustrations! BABA MAKES ME SO MAD! I LOVE WWE! 😡</p>
+    </header>
+
+    <!-- Add the spinning image here -->
+    <img src="mobald.jpg" alt="Spinning face" class="spin">
+
+    <main>
+        <div class="angry-button-container">
+            <button id="angryButton">DUDE NOOOO!</button>
+            <p id="angryMessage"></p>
+        </div>
+    </main>
+
+    <!-- House image with caption -->
+    <div class="house-container">
+        <h2>This is Mah Houth</h2>
+        <img src="mahhouth.jpg" alt="Mah Houth">
+    </div>
+
+    <!-- Channel image with caption -->
+    <div class="channel-container">
+        <h2>Subscribe to my Channel! 100 sub gfuel giveaway!</h2>
+        <img src="kingmoiz.jpg" alt="King Moiz">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Angrymo. Release your inner rage!</p>
+    </footer>
+
+    <!-- Small link in the bottom left corner -->
+    <a href="gianna.html" class="small-link">Gianna Defalco</a>
+
+    <script>
+        // Script to handle the anger button
+        const angryButton = document.getElementById('angryButton');
+        const angryMessage = document.getElementById('angryMessage');
+
+        // Array of random angry messages
+        const angryQuotes = [
+            "Arrgh! I'm so mad!",
+            "Why is everything so annoying?!",
+            "I can't take it anymore!",
+            "Why is this happening?!",
+            "Just stop!",
+            "I need to scream!!!",
+            "The rage is real!",
+            "No BABA NOT THE SHOE",
+            "BRANDON YOU'RE DONE",
+            "DUDUDUDUDUDUDUDUDUDUDE",
+            "I'm just trying to have a good day",
+            "NOT THE SHOWER HANDLE",
+            "MAH HOUTH",
+            "DUDE AVERAGE CLASSES"
+        ];
+
+        // Function to generate a random angry message
+        function getRandomAngryMessage() {
+            const randomIndex = Math.floor(Math.random() * angryQuotes.length);
+            return angryQuotes[randomIndex];
+        }
+
+        // Add an event listener to the button
+        angryButton.addEventListener('click', () => {
+            const randomMessage = getRandomAngryMessage();
+            angryMessage.textContent = randomMessage;
+        });
+    </script>
+</body>
+</html>
